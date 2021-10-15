@@ -20,7 +20,7 @@ This module uses different tools to get process list:
 ## Compatibility
 
 - Should work great in most *nix system.
-- Should work on Win10/7 more system versions need to be test.  
+- Should work on Win10/7 more system versions need to be test.
 
 Any compatibility issue is welcomed.
 
@@ -109,7 +109,7 @@ ps.kill( '12345', 'SIGKILL', function( err ) {
 you can use object as the second parameter to pass more options:
 
 ```js
-ps.kill( '12345', { 
+ps.kill( '12345', {
     signal: 'SIGKILL',
     timeout: 10,  // will set up a ten seconds timeout if the killing is not successful
 }, function(){});
@@ -160,6 +160,28 @@ ps.lookup({
     resultList.forEach(function( process ){
         if( process ){
             console.log( 'PID: %s, COMMAND: %s, ARGUMENTS: %s', process.pid, process.command, process.arguments );
+        }
+    });
+});
+
+```
+
+Support keywords option to custom the output, `ps` output depends on the arguments, all the keywords supported by `ps` and arguments need refer to command manual by `man ps`.
+```javascript
+var ps = require('ps-node');
+
+// A simple pid lookup
+ps.lookup({
+    command: 'node',
+    keywords: ['stat', 'time']
+    }, function(err, resultList ) {
+    if (err) {
+        throw new Error( err );
+    }
+
+    resultList.forEach(function( process ){
+        if( process ){
+            console.log( 'PID: %s, COMMAND: %s, ARGUMENTS: %s, STAT: %s, TIME: %s', process.pid, process.command, process.arguments, process.stat, process.time );
         }
     });
 });
