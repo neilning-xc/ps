@@ -3,10 +3,9 @@ os:
   - linux
 language: node_js
 node_js:
-  - '7'
-  - '6'
-  - '5'
-  - '4'
+  - '14'
+  - '15'
+  - '16'
 branches:
   only:
     - master
