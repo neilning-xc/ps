@@ -15,7 +15,6 @@ branches:
 deploy:
   provider: npm
   email: "$NPM_EMAIL"
-  api_token:
-    secure: "$NPM_TOKEN"
+  api_token: "$NPM_TOKEN"
   on:
     branch: master
