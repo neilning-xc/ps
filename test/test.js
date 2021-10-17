@@ -105,6 +105,18 @@ describe('test', function () {
         done();
       });
     });
+
+    it('return extra columns with option keyword', function (done) {
+      PS.lookup({command: 'node', keywords: ['stat', 'wchan', 'state']}, function (err, list) {
+        assert.equal(list.length > 0, true);
+        list.forEach(function (row) {
+          assert.notEqual(row['stat'], undefined);
+          assert.notEqual(row['wchan'], undefined);
+          assert.equal(row['state'], undefined);
+        });
+        done();
+      });
+    });
   });
 
   describe('#kill()', function () {
