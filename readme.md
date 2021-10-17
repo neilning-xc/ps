@@ -7,7 +7,7 @@ Before using this module, you should take look at section [Existing Bugs You Sho
 ## Install
 
 ```bash
-$ npm install ps-node
+$ npm install neil-ps-node
 ```
 
 ## How Does It Work
