@@ -1,11 +1,11 @@
 {
-  "name": "ps-node",
+  "name": "neilning/ps-node",
   "version": "0.1.6",
   "description": "A process lookup utility",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/neekey/ps.git"
+    "url": "git@github.com:neilning-xc/ps.git"
   },
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha -t 0 -R spec test/test.js",
