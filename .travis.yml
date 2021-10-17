@@ -17,3 +17,4 @@ deploy:
   api_token: "$NPM_TOKEN"
   on:
     tags: true
+    branch: master
