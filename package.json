@@ -1,6 +1,6 @@
 {
   "name": "neil-ps-node",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A process lookup utility",
   "main": "index.js",
   "repository": {
