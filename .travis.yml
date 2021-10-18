@@ -6,10 +6,6 @@ node_js:
   - '14'
   - '15'
   - '16'
-branches:
-  only:
-    - master
-    - /tags\/.*/
 
 deploy:
   provider: npm
@@ -17,4 +13,4 @@ deploy:
   api_token: "$NPM_TOKEN"
   on:
     tags: true
-    branch: master
+  
