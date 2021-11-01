@@ -106,7 +106,7 @@ describe('test', function () {
       });
     });
 
-    it('return extra columns with option keyword', function (done) {
+    it('return extra columns with option keywords', function (done) {
       PS.lookup({command: 'node', keywords: ['stat', 'wchan', 'state']}, function (err, list) {
         assert.equal(list.length > 0, true);
         list.forEach(function (row) {

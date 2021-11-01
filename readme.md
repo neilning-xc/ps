@@ -1,6 +1,5 @@
-# ps [![Build Status](https://travis-ci.org/neekey/ps.svg?branch=master)](https://travis-ci.org/neekey/ps) [![Build status](https://ci.appveyor.com/api/projects/status/fhom8ot12b6jxeyt?svg=true)](https://ci.appveyor.com/project/neekey/ps)
-
-A Node.js module for looking up running processes. This module uses [Table-Parser](https://github.com/neekey/table-parser) to parse the output.
+# ps [![Build Status](https://app.travis-ci.com/neilning-xc/ps.svg?branch=master)](https://app.travis-ci.com/neilning-xc/ps)
+This repository forked from [neekey/ps](https://github.com/neekey/ps) and do some changes, it supports keywords option to custom column of return result, all support keywords can be found by `man ps`
 
 Before using this module, you should take look at section [Existing Bugs You Should Know](https://github.com/neekey/ps#user-content-existing-bugs-you-should-know) at the bottom of this doc.
 
@@ -29,10 +28,10 @@ Any compatibility issue is welcomed.
 Lookup process with specified `pid`:
 
 ```javascript
-var ps = require('ps-node');
+var ps = require('neil-ps-node');
 
 // A simple pid lookup
-ps.lookup({ pid: 12345 }, function(err, resultList ) {
+ps.lookup({ pid: 12345, {keywords: [stat]} }, function(err, resultList ) {
     if (err) {
         throw new Error( err );
     }
@@ -41,7 +40,7 @@ ps.lookup({ pid: 12345 }, function(err, resultList ) {
 
     if( process ){
 
-        console.log( 'PID: %s, COMMAND: %s, ARGUMENTS: %s', process.pid, process.command, process.arguments );
+        console.log( 'PID: %s, COMMAND: %s, ARGUMENTS: %s, STAT: %s', process.pid, process.command, process.arguments, process.stat );
     }
     else {
         console.log( 'No such process found!' );
