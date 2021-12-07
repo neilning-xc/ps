@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 
 export default [
   {
-    input: './src/index.ts',
+    input: './lib/index.ts',
     output: {
       dir: 'dist',
       format: 'cjs',
@@ -12,12 +12,12 @@ export default [
     },
     plugins: [resolve(), commonjs(), typescript()],
   }, {
-    input: './src/index.ts',
+    input: './lib/index.ts',
     output: {
       dir: 'dist',
       format: 'esm',
       entryFileNames: '[name].esm.js',
     },
     plugins: [resolve(), commonjs(), typescript()],
-  }
+  },
 ];
